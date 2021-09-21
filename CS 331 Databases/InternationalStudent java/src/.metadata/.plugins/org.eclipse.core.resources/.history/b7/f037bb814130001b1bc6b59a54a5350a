@@ -1,0 +1,72 @@
+package InternationalStudent;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Updates {
+	public static void updateInterface() throws SQLException {
+//		try {
+//		} catch(SQLException se) {
+//			System.out.println(se);
+//		}
+		printOptions();
+		updateInfo();
+
+	}
+	
+	static void updateInfo() {
+        boolean done = false;
+		do {
+			System.out.print("Type in your option: ");
+		    Scanner input = new Scanner(System.in);
+		    int number = input.nextInt();
+		    System.out.println();
+			switch(number) {
+				case 1:
+					//add new student
+					break;
+				case 2:
+					//new course
+					break;
+				case 3:
+					//new department
+					break;
+				case 4:
+					//register
+					break;
+				case 5:
+					done = true;
+					break;			
+			}			
+			
+		} while (!done);
+		 		
+	}
+	
+	static void printOptions() {
+        System.out.println("    		Insert New Information"); //printing statements
+        System.out.println("--------------------------------------------------\n");
+        System.out.println("                  1. Add new student information ");
+        System.out.println("                  2. Add new course information ");
+        System.out.println("                  3. Add new department information");
+        System.out.println("                  4. Register a student");
+        System.out.println("                  5. Quit");
+		
+	}
+	
+	static void addStudent() {
+		
+	}
+	
+	static void addCourse() {
+		
+	}
+	
+	static void addDepartment() {
+		
+	}
+	
+	static void registerStudent() {
+		
+	}
+}

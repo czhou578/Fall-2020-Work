@@ -1,0 +1,62 @@
+package InternationalStudent;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.io.*;
+import java.util.*;
+
+public class InternationalRule {
+	public static void internationalRuleInterface()throws SQLException{
+		try {
+			findRule();
+			returnToMain();
+			
+		}catch(SQLException ex) {
+   			System.out.println(ex);
+   		}
+    }
+		
+	private static void findRule() throws SQLException{
+		try {
+	        Statement stmt = InternationalStudentMain.conn.createStatement();           
+            String query = "select * from rules";          
+            ResultSet rset = stmt.executeQuery(query);
+         
+            System.out.println("    International Rules and Laws");
+            System.out.println("--------------------------------------------------\n");
+            System.out.println("ID     Name          Description");
+            
+            while(rset.next()) {
+            	int id = rset.getInt("rules_id");
+            	String name = rset.getString("rules_name");
+            	String description = rset.getString("rules_description");            	
+            	System.out.println( id + "    " + name + "    " + description);
+            }
+	            
+		}catch(SQLException ex) {
+   			System.out.println(ex);
+   		}
+	}
+	
+	private static void returnToMain(){		
+		boolean done = false;			
+		do {
+			System.out.println();
+			System.out.print("Enter 1 to return to main interface: ");
+			Scanner input = new Scanner(System.in);
+			int number = input.nextInt();
+			
+			switch(number) {
+				case 1:
+					done = true;
+					break;
+				default:
+					System.out.println(" Not a valid option ");
+			}	
+			
+		}while(!done);								
+	}	
+}

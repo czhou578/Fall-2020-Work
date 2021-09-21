@@ -1,0 +1,29 @@
+package InternationalStudent;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Updates {
+	public static void update() {
+		
+	}
+	
+	static void updateInfo() throws SQLException {
+        System.out.println("    Insert New Information");
+        System.out.println("--------------------------------------------------\n");
+        System.out.println("                  1. Add new student information ");
+        System.out.println("                  2. Add new course information ");
+        System.out.println("                  3. Add new department information");
+        System.out.println("                  4. Register a student");
+
+
+		try {
+	        Statement stmt = InternationalStudentMain.conn.createStatement();           
+	        
+			
+			
+		} catch(SQLException se) {
+			
+		}
+		
+	}
+}

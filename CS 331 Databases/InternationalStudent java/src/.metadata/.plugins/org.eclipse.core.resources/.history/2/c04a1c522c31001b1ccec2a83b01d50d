@@ -1,0 +1,167 @@
+package InternationalStudent;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Scanner;
+
+public class Updates {
+	public static void updateInterface() throws SQLException {
+//		try {
+//		} catch(SQLException se) {
+//			System.out.println(se);
+//		}
+		if (askCredentials() == false) {
+			return;
+		} else {
+			printOptions();
+			updateInfo();
+			
+		}
+
+	}
+	
+	 static boolean askCredentials() {
+		System.out.println("Enter credentials");
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter Username: ");
+		
+		String username = input.nextLine();
+		System.out.print("Enter password: ");
+		
+		String password = input.nextLine();
+		if (!username.equals("student") || !password.equals("password")) {
+			System.out.println("Incorrect credentials. Try again!");
+			return false;
+		}
+		System.out.println();
+		return true;
+		
+	}
+
+	static void updateInfo() throws SQLException {
+        boolean done = false;
+		do {
+			System.out.print("Type in your option: ");
+		    Scanner input = new Scanner(System.in);
+		    int number = input.nextInt();
+		    System.out.println();
+			switch(number) {
+				case 1:
+					addStudent();
+					break;
+				case 2:
+					addCourse();
+					break;
+				case 3:
+					//new department
+					break;
+				case 4:
+					//register
+					break;
+				case 5:
+					done = true;
+					break;			
+			}			
+			
+		} while (!done);
+	}
+	
+	static void printOptions() {
+        System.out.println("    		Insert New Information"); //printing statements
+        System.out.println("--------------------------------------------------\n");
+        System.out.println("                  1. Add new student information ");
+        System.out.println("                  2. Add new course information ");
+        System.out.println("                  3. Add new department information");
+        System.out.println("                  4. Register a student");
+        System.out.println("                  5. Quit");
+		
+	}
+	
+	static void addStudent() throws SQLException {
+		Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/InternationalStudent", "student", "password");
+        
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter Ssn: ");
+		int ssn = scanner.nextInt();
+		scanner.nextLine();
+		System.out.println();
+		System.out.print("Enter First Name: ");
+		String firstName = scanner.nextLine();
+		System.out.println();
+
+		System.out.print("Enter Last Name: ");
+		String lastName = scanner.nextLine();
+		System.out.println();
+		
+		System.out.print("Enter BirthDate With Dashes In-Between (yyyy-mm-dd): ");
+		String theDate = scanner.nextLine();
+		//java.sql.Date.valueOf(theDate);
+		//SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
+		Date date = java.sql.Date.valueOf(theDate);
+		
+		System.out.println();
+        System.out.print("Enter gender: ");
+        String gender = scanner.nextLine();
+		System.out.println();
+        System.out.print("Enter Address: ");
+        String addr = scanner.nextLine();
+		System.out.println();
+        System.out.print("Enter enrollment date: ");
+        String enrollDate = scanner.nextLine();
+        Date registerDate = java.sql.Date.valueOf(enrollDate);
+        
+		System.out.println();
+        System.out.print("Enter Type: ");
+        String type = scanner.nextLine();
+		System.out.println();
+        System.out.print("Enter Visa Type: ");
+        String visaType = scanner.nextLine();
+        
+
+        
+        String query = "INSERT INTO student (Ssn, first_name, last_name, birthdate, gender, addr, enroll_date, type, visa_type)"
+        		+ " VALUES (?,?,?,?,?,?,?,?,?)";
+        
+		PreparedStatement stmt = conn.prepareStatement(query);
+        stmt.setInt(1, ssn);
+        stmt.setString(2, firstName);
+        stmt.setString(3, lastName);
+        stmt.setDate(4, date);
+        stmt.setString(5, gender);
+        stmt.setString(6, addr);
+        stmt.setDate(7, registerDate);
+        stmt.setString(8, type);
+        stmt.setString(9, visaType);
+        stmt.executeUpdate(query);
+
+	}
+	
+	static void addCourse() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter Course_ID: ");
+		int courseID = scanner.nextInt();
+		System.out.print("Enter Course Name: ");
+		String courseName = scanner.nextLine();
+		System.out.print("Enter Credits: ");
+		String credits = scanner.nextLine();
+		System.out.print("Enter Course_ID: ");
+
+
+
+		
+	}
+	
+	static void addDepartment() {
+		
+	}
+	
+	static void registerStudent() {
+		
+	}
+}

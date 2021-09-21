@@ -1,0 +1,59 @@
+package InternationalStudent;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class MainInterface {
+	public static void mainInterface() throws SQLException{
+           try { 
+        	   boolean done = false;
+        	   do {
+        		    printMenu();
+	                System.out.print("Type in your option: ");
+	                System.out.flush();
+	                Scanner input = new Scanner(System.in);
+	                int number = input.nextInt();
+	                System.out.println();
+                              
+		            switch (number) {
+	                    case 1: 	                    	
+	                    	//CurrentStudent.currentStudentInterface();
+	                        break;
+	                    case 2:	                    	
+	                        //GraduatedStudent.graduateStudentInterface();
+	                        break;
+	                    case 3:	                    	
+	                        InternationalRule.internationalRuleInterface();
+	                        break;
+	                    case 4:    	                    
+	                    	//Update.update();
+	                     	break;               
+	                    case 5:
+	                    	done = true;
+	                        break;
+	                    default:
+	                        System.out.println(" Not a valid option ");
+	                } 
+	            }while(!done);
+
+           }catch(SQLException ex) {
+       			System.out.println(ex);
+       		}       
+	}
+	
+	private static void printMenu() {
+        System.out.println();
+        System.out.println("**************************************************");
+        System.out.println("                  ***************");
+        System.out.println("                  Welcome to the");
+        System.out.println("     International Student Information System");
+        System.out.println("                  ***************");
+        System.out.println("**************************************************");
+        System.out.println("                  1. Current Students ");
+        System.out.println("                  2. Graduated Students ");
+        System.out.println("                  3. International Rules & Laws");
+        System.out.println("                  4. Updates");
+        System.out.println("                  5. Quit");
+    }
+}

@@ -1,0 +1,347 @@
+{
+"title": "spring roll",
+"description": "chef's delight",
+"category": ["starter"],
+"ingredients": [
+
+  {"amount": "2",
+    "name": "eggs"
+  },
+
+  {
+    "amount": "5",
+    "name": "shrimp chips"
+  },
+
+  {
+    "name": "sesame",
+    "amount": "2",
+    "unit": "cups"
+  }
+
+],
+
+  "step": [
+    {
+      "description": "let it rest after mixing ingredients."
+    },
+
+    {
+      "description": "cook in oven"
+    },
+
+    {
+      "description": "enjoy!"
+    }
+  ],
+
+  "title": "mix bowl",   
+  "description": "chef's delight",
+  "category": ["starter"],
+  "ingredients": [
+  
+    {"amount": "5",
+      "name": "eggs"
+    },
+  
+    {
+      "amount": "5",
+      "name": "lobsters"
+    },
+  
+    {
+      "name": "sesame",
+      "amount": "5",
+      "unit": "cups"
+    }
+  
+  ],
+  
+  "step": [
+    {
+      "description": "let it rest after mixing ingredients."
+    },
+
+    {
+      "description": "cook in oven"
+    },
+
+    {
+      "description": "enjoy!"
+    }
+  ],
+
+  "title": "platter",   
+  "description": "chef's delight",
+  "category": ["main course"],
+  "ingredients": [
+  
+    {"amount": "5",
+      "name": "eggs"
+    },
+  
+    {
+      "amount": "0.5",
+      "unit": "tsp",
+      "name": "milk"
+    },
+  
+    {
+      "name": "sugar",
+      "amount": "5",
+      "unit": "cups"
+    }
+  
+  ],
+  
+  "step": [
+    {
+      "description": "let it rest after mixing with batter."
+    },
+
+    {
+      "description": "cook in oven"
+    },
+
+    {
+      "description": "enjoy!"
+    }
+  ],
+
+  "title": "scones",   
+  "description": "delicious scones",
+  "category": ["Dessert"],
+  "ingredients": [
+  
+    {"amount": "5",
+      "units": "cups",
+      "name": "pumpkin filling"
+    },
+  
+    {
+      "amount": "0.5",
+      "unit": "tsp",
+      "name": "milk"
+    },
+  
+    {
+      "name": "flour",
+      "amount": "5",
+      "unit": "cups"
+    }
+  
+  ],
+  
+  "step": [
+    {
+      "description": "let it rest after mixing with batter."
+    },
+
+    {
+      "description": "cook in oven"
+    },
+
+    {
+      "description": "enjoy!"
+    }
+  ],
+
+  "title": "muffin",   
+  "description": "chocolate muffin",
+  "category": ["snack"],
+  "ingredients": [
+  
+    {"amount": "5",
+      "name": "chocolates"
+    },
+  
+    {
+      "amount": "0.5",
+      "unit": "tsp",
+      "name": "milk"
+    },
+  
+    {
+      "name": "flour",
+      "amount": "5",
+      "unit": "cups"
+    }
+  
+  ],
+  
+  "step": [
+    {
+      "description": "let it rest after mixing with batter."
+    },
+
+    {
+      "description": "cook in oven"
+    },
+
+    {
+      "description": "enjoy!"
+    }
+  ],
+
+  "title": "granola bar",   
+  "description": "comfort food",
+  "category": ["snack"],
+  "ingredients": [
+  
+    {"amount": "5",
+      "name": "veggies"
+    },
+  
+    {
+      "amount": "0.5",
+      "unit": "tsp",
+      "name": "granola"
+    },
+  
+    {
+      "name": "rains",
+      "amount": "5",
+      "unit": "cups"
+    }
+  
+  ],
+  
+  "step": [
+    {
+      "description": "mix ingredienets and compress with machine."
+    },
+
+    {
+      "description": "cook in oven"
+    },
+
+    {
+      "description": "enjoy!"
+    }
+  ],
+
+  "title": "food bowl",   
+  "description": "breakfast essential",
+  "category": ["main course"],
+  "ingredients": [
+  
+    {"amount": "5",
+      "name": "veggies"
+    },
+  
+    {
+      "amount": "0.5",
+      "unit": "tsp",
+      "name": "soy sauce"
+    },
+  
+    {
+      "name": "meat",
+      "amount": "5",
+      "unit": "slices"
+    }
+  
+  ],
+  
+  "step": [
+    {
+      "description": "mix ingredients"
+    },
+
+    {
+      "description": "heat up"
+    },
+
+    {
+      "description": "enjoy!"
+    }
+  ],
+
+  "title": "hot dog",   
+  "description": "breakfast essential",
+  "category": ["breakfast"],
+  "ingredients": [
+  
+    {"amount": "1",
+      "name": "bread"
+    },
+  
+    {
+      "amount": "0.5",
+      "unit": "tsp",
+      "name": "ketchup"
+    },
+  
+    {
+      "name": "meat",
+      "amount": "2",
+      "unit": "slices"
+    }
+  
+  ],
+  
+  "step": [
+    {
+      "description": "Collect ingredients"
+    },
+
+    {
+      "description": "assemble"
+    },
+
+    {
+      "description": "enjoy!"
+    }
+  ],
+
+  "title": "pancakes",   
+  "description": "breakfast essential",
+  "category": ["Dessert"],
+  "ingredients": [
+  
+    {"amount": "4",
+      "name": "eggs"
+    },
+  
+    {
+      "amount": "0.5",
+      "unit": "cup",
+      "name": "milk"
+    },
+  
+    {
+      "name": "flour",
+      "amount": "20",
+      "unit": "tsp"
+    }
+  
+  ],
+  
+  "step": [
+    {
+      "description": "Beat really well."
+    },
+
+    {
+      "description": "cook in oven for 10 min"
+    },
+
+    {
+      "description": "enjoy!"
+    }
+  ]
+
+}
+
+{  
+  "Student_Id": 1001,
+  "Student_Name": "Chaitanya",    
+  "Age": 30,
+  "College": "Beginnersbook"
+
+}
+
+
+
+
+

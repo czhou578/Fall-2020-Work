@@ -1,0 +1,29 @@
+{
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "C/C++: g++.exe build active file",
+      "command": "C:\\MinG\\mingw32\\bin\\g++.exe",
+      "args": [
+        "-g",
+        //"${file}",
+        "${fileDirname}\\**.cpp",
+        "${fileDirname}\\**.h",
+        "-o",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "options": {
+        "cwd": "C:\\MinG\\mingw32\\bin"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Generated task by Debugger"
+    }
+  ],
+  "version": "2.0.0"
+}
