@@ -12,21 +12,23 @@
 #include "Contact.h"
 #include "PhoneBookManager.h"
 
-using namespace std;  
+using namespace std;
 
-int main() {
+int main()
+{
 
   string myText; // each line of the text file
-  ifstream file; 
+  ifstream file;
   int totalLineFile = 151425;
   int arrayPos = 0;
 
-  Contact* contactInfos;
-  contactInfos = new Contact[totalLineFile + 1]; //dynamically created array
+  Contact *contactInfos;
+  contactInfos = new Contact[totalLineFile + 1]; // dynamically created array
 
-  file.open("phonebook.txt");
+  file.open("phonebook2.txt");
 
-  while(getline(file, myText)) { //reading file into array
+  while (getline(file, myText))
+  { // reading file into array
     string fName;
     string lName;
     int phoneNumber;
@@ -40,50 +42,57 @@ int main() {
 
   file.close();
 
-  char inputChar; //defined variables for collecting input
+  char inputChar; // defined variables for collecting input
   int inputNumber;
   string inputfirstName;
   string inputLastName;
 
-  while (inputChar!= 'Q') { // registering user entered command
+  while (inputChar != 'Q')
+  { // registering user entered command
     cout << "MY PHONEBOOK APPLICATION" << endl;
     cout << "Please choose an operation" << endl;
-    cout << "A(Add) | S(Search) | D(Delete) | L(List) | Q(Quit):"; 
+    cout << "A(Add) | S(Search) | D(Delete) | L(List) | Q(Quit):";
     cin >> inputChar;
 
-    if (inputChar == 'A') { //if statements for determining actions based on user input
+    if (inputChar == 'A')
+    { // if statements for determining actions based on user input
       cout << "Enter First Name: ";
       cin >> inputfirstName;
       cout << "Enter Last Name: ";
       cin >> inputLastName;
       cout << "Phone Number: ";
       cin >> inputNumber;
-      Contact tempContact(inputfirstName + " ", inputLastName + " ", inputNumber); //space added here
+      Contact tempContact(inputfirstName + " ", inputLastName + " ", inputNumber); // space added here
       addContact(contactInfos, tempContact, totalLineFile);
-
-    } else if (inputChar == 'S') {
+    }
+    else if (inputChar == 'S')
+    {
       cout << "Enter First Name: ";
       cin >> inputfirstName;
       cout << "Enter Last Name: ";
       cin >> inputLastName;
       Contact tempContact(inputfirstName + " ", inputLastName + " ");
       search(contactInfos, tempContact, totalLineFile);
-
-    } else if (inputChar == 'D') {
+    }
+    else if (inputChar == 'D')
+    {
       cout << "Enter First Name: ";
       cin >> inputfirstName;
       cout << "Enter Last Name: ";
       cin >> inputLastName;
       deleteContact(contactInfos, inputfirstName, inputLastName, totalLineFile);
-
-    } else if (inputChar == 'L') {
+    }
+    else if (inputChar == 'L')
+    {
       list(contactInfos, totalLineFile);
-
-    } else if (inputChar == 'Q') {
-      delete[] contactInfos; //delete array if the program is terminated
+    }
+    else if (inputChar == 'Q')
+    {
+      delete[] contactInfos; // delete array if the program is terminated
       exit(0);
-   
-    } else {
+    }
+    else
+    {
       delete[] contactInfos;
       exit(0);
     }
