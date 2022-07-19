@@ -6,35 +6,41 @@
 
 using namespace std;
 
-class Contact {
-  private:
-    string firstName;
-    string lastname;
-    int phoneNum;
-  public:
-    Contact() {}; //dummy default constructor
+class Contact
+{
+private:
+  string firstName;
+  string lastname;
+  int phoneNum;
 
-    Contact(string fName, string lName, int num) { //contact constructor
-      firstName = fName;
-      lastname = lName;
-      phoneNum = num;
-    }
+public:
+  Contact(){}; // dummy default constructor
 
-    Contact(string fName, string lName) {
-      firstName = fName;
-      lastname = lName;      
-    }
+  Contact(string fName, string lName, int num)
+  { // contact constructor
+    firstName = fName;
+    lastname = lName;
+    phoneNum = num;
+  }
 
-    string getfirstName() { //getter methods
-      return firstName;
-    }
+  Contact(string fName, string lName)
+  {
+    firstName = fName;
+    lastname = lName;
+  }
 
-    string getLastName() {
-      return lastname;
-    }
+  string getfirstName()
+  { // getter methods
+    return firstName;
+  }
 
-    int getphoneNum() {
-      return phoneNum;
-    }
+  string getLastName()
+  {
+    return lastname;
+  }
 
+  int getphoneNum()
+  {
+    return phoneNum;
+  }
 };
