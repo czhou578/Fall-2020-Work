@@ -35,15 +35,35 @@ class Contact {
   }
 }
 
-const input = document.getElementsByTagName('input')
+const input = document.getElementsByTagName('input')[0]
+console.log(input)
 
-async function main() {
+function readFile(input: HTMLInputElement) {
   let phoneBook = [] as Contact[]
+  if (input !== null) {
+    let file = input.files![0]
+    let fileReader = new FileReader()
+    fileReader.readAsText(file)
 
-  console.log(text)
+    fileReader.addEventListener('load', () => {
+      let resultString = fileReader.result as string
+      let stripped = resultString.split(/\r\n|\n/);
+
+      for (let i = 0; i < stripped.length; i++) {
+        let temp = stripped[i].split(" ")
+        var contact = new Contact(temp[0], temp[1], parseInt(temp[2]))
+        phoneBook.push(contact)
+      }
+    })
+    fileReader.onerror = function () {
+      alert(fileReader.error)
+    }
+  }
 }
 
-main()
- 
+input.addEventListener('change', (e) => {
+  readFile(input)
+})
+
 
 
