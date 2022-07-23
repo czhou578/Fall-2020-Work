@@ -1,4 +1,5 @@
-// import './phonebook2.txt'
+import readline = require('readline')
+
 class Contact {
   private firstName: string | undefined
   private lastName: string | undefined
@@ -10,7 +11,7 @@ class Contact {
     this.phoneNum = num
   }
 
-  getFirstName(): string | undefined {
+  getFirstName(): string | undefined {  
     if (this.firstName) {
       return this.firstName
     }
@@ -64,6 +65,59 @@ function readFile(input: HTMLInputElement) {
 input.addEventListener('change', (e) => {
   readFile(input)
 })
+
+function readUserInput() {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  })
+
+  rl.question("Phonebook application, choose operation (A(Add) | S(Search) | D(Delete) | L(List) | Q(Quit)", function (answer) {
+    if (answer === 'A') {
+      console.log('asdkasj;dsad')
+
+    } else if (answer === 'S') {
+
+    }
+  })
+}
+
+readUserInput()
+
+function search(contactBook: Contact[], contact: Contact, totalLineFiles: number): void {
+  for (let i = 0; i < totalLineFiles; i++) {
+    if (contact.getFirstName() === contactBook[i].getFirstName() && contact.getLastName() === contactBook[i].getLastName()) {
+      console.log('First Name: %s, Last Name: %s', contact.getFirstName(), contact.getLastName())
+    }
+  }
+}
+
+function list(contactBook: Contact[], totalLineFiles: number): void {
+  for (let i = 0; i < totalLineFiles; i++) {
+    if (contactBook[i].getFirstName() !== "") {
+      console.log('First Name: %s, Last Name: %s， Phone Number: %d', contactBook[i].getFirstName(), contactBook[i].getLastName(), contactBook[i].getPhoneNum())
+    } else {
+      return
+    }
+  }
+}
+
+function addContact(contactBook: Contact[], contact: Contact, totalLineFiles: number): Contact {
+  totalLineFiles++
+  contactBook.push(contact)
+  return contactBook[totalLineFiles - 1]
+}
+
+function deleteContact(contactBook: Contact[], firstName: string, lastName: string, totalLineFiles: number): Contact {
+  totalLineFiles--
+  for (let i = 0; i < totalLineFiles; i++) {
+    if (contactBook[i].getFirstName() === firstName && contactBook[i].getLastName() === lastName) {
+      contactBook.splice(i, 1)
+    }
+  }
+
+  return contactBook[totalLineFiles - 1]
+}
 
 
 
